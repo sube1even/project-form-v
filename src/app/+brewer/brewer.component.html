@@ -1,13 +1,15 @@
-<div>
-  <b>Name</b>
-</div>
-<p>
-  {{brewerName}}
-</p>
 
+
+<div *ngFor="let beerdroid of brewer">
 <div>
-  <b>Status</b>
+  <span class="semibold lightgrey">Name</span>
 </div>
-<p>
-  
-</p>
+<div class="fontlg">
+  {{beerdroid.name}}
+</div>
+
+<div class="padbott">
+  <span class="semibold lightgrey">Status</span> <span class="lightgrey">{{beerdroid.status}}</span>
+</div>
+
+</div>

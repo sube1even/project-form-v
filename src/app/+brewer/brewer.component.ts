@@ -12,7 +12,7 @@ import { Brewer, BrewerService } from '../shared';
 export class BrewerComponent implements OnInit {
   brewer: Brewer[];
   brewerName: string;
-
+  errorMessage: string;
 
     constructor(private brewerService: BrewerService) { }
 
@@ -22,30 +22,16 @@ export class BrewerComponent implements OnInit {
 
     private getBrewer() {
           this.brewer = null;
-          this.brewerService.getBrewerOb()
+          this.brewerService.getBrewer()
               .subscribe((brewer) => {
-                  // if (brewer) {
-                  //     console.log(brewer);
-                  //     this.brewer = brewer;
-                  //     this.getBrewerName();
-                  // }
-                  console.log(brewer);
-                  brewer.forEach((b) => {
-                    this.brewer.push(b);
-                });
-                 console.log(this.brewer);
-
+                  if (brewer) {
+                      console.log(brewer);
+                      this.brewer = brewer;
+                  }
               },
               error => {
-                 // this.isLoading = false;
+                 this.errorMessage = <any>error
               });
       }
-
-     private getBrewerName() {
-       //this.brewerName = this.brewerService.name;
-      }
-
-
-
 
 }

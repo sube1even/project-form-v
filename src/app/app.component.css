@@ -1,0 +1,36 @@
+html, body {
+    background: #363941;
+    color:#F36322;
+    font-family: "proxima-nova",Arial;
+    font-weight: 100;
+}
+body {
+    padding:3em;
+}
+.semibold {
+    font-weight: 600 !important;
+    color: white;
+    opacity: 0.5;
+}
+.lightgrey {
+    font-weight: 400;
+    color:white;
+    opacity: 0.5;
+}
+.fontsm {
+    font-size: 1.3em;
+}
+.fontmd {
+    font-size: 2em;
+}
+.fontlg {
+    font-size: 3.5em;
+}
+.padbott {
+    margin: 0 0 2.5em 0;
+}
+.header img {
+    max-width:200px;
+    opacity:0.5;
+    margin-bottom: 4em;
+}

@@ -1,0 +1,11 @@
+<div *ngFor="let brew of brews">
+  <div *ngIf="!brew.isComplete && !brew.isAborted">
+    <div>
+      <span class="semibold lightgrey">Now Brewing</span>
+    </div>
+    <div class="fontmd">
+      {{brew.customName}}
+    </div>
+
+  </div>
+</div>

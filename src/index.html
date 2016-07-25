@@ -1,6 +1,12 @@
 <!doctype html>
 <html>
 <head>
+  <script src="https://use.typekit.net/nel3tmy.js"></script>
+  <script>
+            try {
+                Typekit.load({async: true});
+            } catch (e) {}
+        </script>
   <meta charset="utf-8">
   <title>Src</title>
   <base href="/">
@@ -10,9 +16,11 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="./app/app.component.css"></link>
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <div class="header"><img src="./assets/logo.svg"></div>
+  <app-root><span class="semibold lightgrey">Loading...</span></app-root>
   
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>

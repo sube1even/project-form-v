@@ -2,26 +2,19 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { Brewer } from '../shared';
+import { Brew } from '../shared';
 
 @Injectable()
-export class BrewerService {
+export class BrewService {
 
   constructor(private http: Http) {}
 
-  getBrewer(): Observable<Brewer[]> {
+  getBrews(): Observable<Brew[]> {
     return this.http
                .get(`https://cors-anywhere.herokuapp.com/`)
-               .map((r: Response) => r.json().response as Brewer[])
+               .map((r: Response) => r.json().response as Brew[])
                .catch(this.handleError);
   }
-
-
-//   getHeroes (): Observable<Hero[]> {
-//   return this.http.get(this.heroesUrl)
-//                   .map(this.extractData)
-//                   .catch(this.handleError);
-// }
 
 private handleError (error: any) {
   let errMsg = (error.message) ? error.message :
