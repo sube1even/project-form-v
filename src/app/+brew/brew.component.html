@@ -1,7 +1,7 @@
 <div *ngFor="let brew of brews">
-  <div *ngIf="!brew.isComplete && !brew.isAborted">
+<div *ngIf="!brew.isComplete && !brew.isAborted">
     <div>
-      <span class="semibold lightgrey">Now Brewing</span>
+      <span class="semibold lightgrey">Now Brewing</span> <span class="lightgrey">{{brew.id}}</span>
     </div>
     <div class="fontmd">
       {{brew.customName}}

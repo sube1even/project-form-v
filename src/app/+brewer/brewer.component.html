@@ -1,15 +1,15 @@
-
-
 <div *ngFor="let beerdroid of brewer">
-<div>
-  <span class="semibold lightgrey">Name</span>
-</div>
-<div class="fontlg">
-  {{beerdroid.name}}
-</div>
+  <div>
+    <span class="semibold lightgrey">Name</span>
+  </div>
+  <div class="fontlg">
+    {{beerdroid.name}}
+  </div>
 
-<div class="padbott">
-  <span class="semibold lightgrey">Status</span> <span class="lightgrey">{{beerdroid.status}}</span>
-</div>
+  <div class="padbott">
+    <span class="semibold lightgrey">Status</span> <span class="lightgrey">{{beerdroid.status}}</span>
+  </div>
 
+
+  <app-brewer-status [id]="beerdroid.id"></app-brewer-status>
 </div>

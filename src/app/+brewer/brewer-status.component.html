@@ -1,0 +1,20 @@
+<div *ngFor="let brewerState of brewerStatus">
+  <div>
+    <span class="semibold lightgrey">Brew started</span>
+  </div>
+  <div class="fontmd">
+    {{brewerState.dateCreated | date:'medium'}}
+  </div>
+  <div>
+    <span class="semibold lightgrey">Ambient</span>
+  </div>
+  <div class="fontlg">
+    {{(brewerState.status.tempAmbient)/10}}&deg;C
+  </div>
+  <div>
+    <span class="semibold lightgrey">Brew Temp</span>
+  </div>
+  <div class="fontlg">
+    {{(brewerState.status.tempBrew2L+brewerState.status.tempBrew8L)/2/10}}&deg;C
+  </div>
+</div>
