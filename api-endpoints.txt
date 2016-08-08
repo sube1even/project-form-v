@@ -7,9 +7,12 @@ https://api.brewart.com/brewer?access_token=[access_token]
 /brewer
 /brewer/93/brew
 /brew
+/brew/207 [PUT]
 /brew/207/timeseries
 /brew/207/history
+/brew/207/name [PUT]
 /shelf
 /recipe
 /keg
+/keg/138 [PUT]
 /favourite
