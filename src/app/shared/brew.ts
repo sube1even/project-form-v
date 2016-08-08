@@ -3,19 +3,25 @@ export class Brew {
   customName: string;
   isComplete: boolean;
   isAborted: boolean;
-
-  
+  tempBrew8L: number;
+tempAmbient:number;
+timestamp: Date;
   constructor(
     id: number,
     customName: string,
     isComplete: boolean,
-  isAborted: boolean) {
-      this.id = id;
-      this.customName = customName;
-      this.isComplete = isComplete;
-      this.isAborted = isAborted;
-     
-
+    isAborted: boolean,
+    tempBrew8L: number,
+    tempAmbient:number,
+    timestamp: Date) {
+    this.id = id;
+    this.customName = customName;
+    this.isComplete = isComplete;
+    this.isAborted = isAborted;
+    this.tempBrew8L = tempBrew8L;
+    this.tempAmbient = tempAmbient;
+    this.tempBrew8L = tempBrew8L;
+    this.timestamp = timestamp;
   }
 }
 

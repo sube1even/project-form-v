@@ -8,15 +8,14 @@ import endpointUrl = require('../shared/endpointUrl');
 @Injectable()
 export class BrewService {
 
-  endpoint = 'brew';
 
   constructor(private http: Http) { }
 
-  getBrews(): Observable<Brew[]> {
+  getBrewTimeseries(currentBrewId:number): Observable<Brew[]> {
     return this.http
-      .get(endpointUrl.reverseProxy + endpointUrl.apiUrl + this.endpoint + '?access_token=' + endpointUrl.token)
-      .map((r: Response) => r.json().response as Brew[])
-      .catch(this.handleError);
+               .get(endpointUrl.reverseProxy + endpointUrl.apiUrl + 'brew/'+ currentBrewId +'/timeseries' + '?access_token=' + endpointUrl.token)
+               .map((r: Response) => r.json().response.seriesData as Brew[])
+               .catch(this.handleError);
   }
 
   private handleError(error: any) {

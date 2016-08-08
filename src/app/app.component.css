@@ -34,3 +34,8 @@ body {
     opacity:0.5;
     margin-bottom: 4em;
 }
+.chart {
+display: block; 
+width: 100%;
+height: 100%;
+}

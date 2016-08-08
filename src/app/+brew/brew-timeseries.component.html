@@ -1,0 +1,19 @@
+<div style="max-width:70%;">
+<base-chart class="chart"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColours"
+                [chartType]="lineChartType"></base-chart>
+
+<div *ngFor="let brew of brewTimeseries">
+  <div>
+    <span class="semibold lightgrey">Brew Temp</span>
+  </div>
+  <div class="fontsm">
+    {{brew.timestamp * 1000 | date:'medium'}}, {{brew.tempBrew8L/10}}&deg;C
+  </div>
+<!--<span class="lightgrey">{{brew | json}}</span>-->
+
+</div>
+</div>

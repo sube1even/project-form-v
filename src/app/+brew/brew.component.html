@@ -1,11 +1,40 @@
-<div *ngFor="let brew of brews">
-<div *ngIf="!brew.isComplete && !brew.isAborted">
-    <div>
-      <span class="semibold lightgrey">Now Brewing</span> <span class="lightgrey">{{brew.id}}</span>
+<div *ngFor="let brew of brewerStatus">
+  <div>
+      <span class="semibold lightgrey">Now Brewing</span> <span class="lightgrey">({{brew.id}})</span>
     </div>
-    <div class="fontmd">
+    <div class="fontlg">
       {{brew.customName}}
     </div>
+  <div>
+    <span class="semibold lightgrey">Brew started</span>
+  </div>
+  <div class="fontmd">
+    {{brew.dateCreated | date:'medium'}}
+  </div>
+  <div>
+    <span class="semibold lightgrey">Ambient</span>
+  </div>
+  <div class="fontlg">
+    {{(brew.status.tempAmbient)/10}}&deg;C
+  </div>
+  <div>
+    <span class="semibold lightgrey">Brew Temp</span>
+  </div>
+  <div class="fontlg">
+    {{(brew.status.tempBrew2L+brew.status.tempBrew8L)/2/10}}&deg;C
+  </div>
 
+  <div>
+    <span class="semibold lightgrey">Status</span> <span class="lightgrey">(cooling | inlimits | heating)</span>
+  </div>
+  <div class="fontsm">
+    {{brew.status.flag}}
+  </div>
+
+  <div>
+    <span class="semibold lightgrey">Current Zone</span>
+  </div>
+  <div class="fontmd">
+    {{brew.currentZone}}
   </div>
 </div>

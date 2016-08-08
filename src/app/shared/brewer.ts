@@ -5,7 +5,7 @@ export class Brewer {
   currentBrewId: number;
   serialNumber: number;
 
-  constructor(
+  constructor (
     id: number,
     name: string,
     status: string,
@@ -19,3 +19,10 @@ export class Brewer {
 
   }
 }
+
+
+// currentBrewId:207
+// id:93
+// name:"R2Beer2"
+// serialNumber:"01010100001362"
+// status:"brew"

@@ -9,10 +9,22 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'ng2-charts': 'vendor/ng2-charts',
+  'chartjs': 'vendor/chart.js/dist'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'chartjs':{ 
+    defaultExtension: 'js',
+    format: 'cjs',
+    main: 'Chart.min.js' 
+  },
+  'ng2-charts':{
+    main: 'ng2-charts.js',
+    format: 'cjs',
+    defaultExtension: 'js'
+  },
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

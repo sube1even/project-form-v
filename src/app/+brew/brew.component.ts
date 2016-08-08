@@ -1,32 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { Brew, BrewService } from '../shared';
+import { BrewerStatus, BrewerStatusService } from '../shared';
 
 @Component({
   moduleId: module.id,
   selector: 'app-brew',
   templateUrl: 'brew.component.html',
-  styleUrls: ['brew.component.css'],
-  providers: [BrewService]
+  styleUrls: ['../+brewer/brewer.component.css'],
+  providers: [BrewerStatusService]
 })
 export class BrewComponent implements OnInit {
-  brews: Brew[];
-  brewerName: string;
+  brewerStatus: BrewerStatus[];
+  @Input() id: number;
   errorMessage: string;
 
-    constructor(private brewService: BrewService) { }
+    constructor(private brewerStatusService: BrewerStatusService) { }
 
     ngOnInit() {
-      this.getBrews();
+      this.getBrewerStatus(this.id);
     }
 
-    private getBrews() {
-          this.brews = null;
-          this.brewService.getBrews()
-              .subscribe((brews) => {
-                  if (brews) {
-                      console.log(brews);
-                      this.brews = brews;
+    private getBrewerStatus(id:number) {
+          this.brewerStatus = null;
+          this.brewerStatusService.getBrewerStatus(this.id)
+              .subscribe((brewerStatus) => {
+                  if (brewerStatus) {
+                      this.brewerStatus = brewerStatus;
+                      console.log(this.brewerStatus);
                   }
               },
               error => {
