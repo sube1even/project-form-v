@@ -1,9 +1,10 @@
 <div *ngFor="let brew of brewerStatus">
   <span class="semibold lightgrey label">Now Brewing</span>
-  <div class="fontsm">{{brew.id}}</div>
+
   <div class="fontlg">
     {{brew.customName}}
   </div>
+  <div class="fontsm">{{brew.id}}</div>
   <div>
     <span class="semibold lightgrey label">Brew started</span>
   </div>
@@ -22,14 +23,15 @@
   <div class="fontlg">
     {{(brew.status.tempBrew2L+brew.status.tempBrew8L)/2/10}}&deg;C
   </div>
-
-  <div>
-    <span class="semibold lightgrey label">Status</span>
-    <!-- <span class="lightgrey">(COOLING | INLIMITS | HEATING)</span> -->
-  </div>
   <div class="fontsm">
     {{brew.status.flag | uppercase}}
   </div>
+
+  <div>
+
+    <!-- <span class="lightgrey">(COOLING | INLIMITS | HEATING)</span> -->
+
+
 
   <div>
     <span class="semibold lightgrey label">Current Zone</span>
