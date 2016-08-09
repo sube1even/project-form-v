@@ -76,7 +76,7 @@ export class BrewTimeseriesComponent implements OnInit {
             times.push(temp.timestamp);
           });
 
-          // console.log(temps);
+          console.log(brewTimeseries);
           tempdata.push({ data: temps, label: 'Temp' });
           console.log(tempdata);
           this.lineChartData = tempdata;

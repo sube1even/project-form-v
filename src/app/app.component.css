@@ -1,41 +1,74 @@
 html, body {
-    background: #363941;
-    color:#F36322;
-    font-family: "proxima-nova",Arial;
-    font-weight: 100;
+  background: #363941;
+  color: #F36322;
+  font-family: "proxima-nova", Arial;
+  font-weight: 100;
 }
 body {
-    padding:3em;
+  padding: 3em;
 }
 .semibold {
-    font-weight: 600 !important;
-    color: white;
-    opacity: 0.5;
+  font-weight: 600 !important;
+  color: white;
+  opacity: 0.5;
 }
 .lightgrey {
-    font-weight: 400;
-    color:white;
-    opacity: 0.5;
+  font-weight: 400;
+  color: white;
+  opacity: 0.5;
 }
 .fontsm {
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 .fontmd {
-    font-size: 2em;
+  font-size: 2em;
 }
 .fontlg {
-    font-size: 3.5em;
+  font-size: 3.5em;
 }
 .padbott {
-    margin: 0 0 2.5em 0;
+  margin: 0 0 2.5em 0;
 }
 .header img {
-    max-width:200px;
-    opacity:0.5;
-    margin-bottom: 4em;
+  max-width: 200px;
+  opacity: 0.5;
+  margin-bottom: 4em;
 }
 .chart {
-display: block; 
-width: 100%;
-height: 100%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 4em 0;
+  width: 60%;
+}
+.graph-title {
+  margin: 3em 0 -2em;
+  display: block;
+}
+.label {
+  margin-top: 1em;
+  display:inline-block;
+  clear:both;
+}
+.zones {
+  display:flex;
+  align-items: center;
+
+}
+.circle {
+  padding:0.5em;
+  border:1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.2);
+  border-radius: 300em;
+  width:1em;
+  height:1em;
+margin: 0.3em 0.15em;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.circle.current {
+  border:1px solid #F36322;
+  color: #F36322;
 }

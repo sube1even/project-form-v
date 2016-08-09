@@ -1,40 +1,53 @@
 <div *ngFor="let brew of brewerStatus">
+  <span class="semibold lightgrey label">Now Brewing</span>
+  <div class="fontsm">{{brew.id}}</div>
+  <div class="fontlg">
+    {{brew.customName}}
+  </div>
   <div>
-      <span class="semibold lightgrey">Now Brewing</span> <span class="lightgrey">({{brew.id}})</span>
-    </div>
-    <div class="fontlg">
-      {{brew.customName}}
-    </div>
-  <div>
-    <span class="semibold lightgrey">Brew started</span>
+    <span class="semibold lightgrey label">Brew started</span>
   </div>
   <div class="fontmd">
     {{brew.dateCreated | date:'medium'}}
   </div>
   <div>
-    <span class="semibold lightgrey">Ambient</span>
+    <span class="semibold lightgrey label">Ambient</span>
   </div>
   <div class="fontlg">
     {{(brew.status.tempAmbient)/10}}&deg;C
   </div>
   <div>
-    <span class="semibold lightgrey">Brew Temp</span>
+    <span class="semibold lightgrey label">Brew Temp</span>
   </div>
   <div class="fontlg">
     {{(brew.status.tempBrew2L+brew.status.tempBrew8L)/2/10}}&deg;C
   </div>
 
   <div>
-    <span class="semibold lightgrey">Status</span> <span class="lightgrey">(cooling | inlimits | heating)</span>
+    <span class="semibold lightgrey label">Status</span>
+    <!-- <span class="lightgrey">(COOLING | INLIMITS | HEATING)</span> -->
   </div>
   <div class="fontsm">
-    {{brew.status.flag}}
+    {{brew.status.flag | uppercase}}
   </div>
 
   <div>
-    <span class="semibold lightgrey">Current Zone</span>
+    <span class="semibold lightgrey label">Current Zone</span>
   </div>
-  <div class="fontmd">
-    {{brew.currentZone}}
+  <div class="zones">
+
+
+  <div class="fontmd circle" [ngClass]="{current: brew.currentZone === 1}">
+    1
+  </div>
+  <div class="fontmd circle" [ngClass]="{current: brew.currentZone === 2}">
+    2
+  </div>
+  <div class="fontmd circle" [ngClass]="{current: brew.currentZone === 3}">
+    3
+  </div>
+  <div class="fontmd circle" [ngClass]="{current: brew.currentZone === 4}">
+    4
+  </div>
   </div>
 </div>
