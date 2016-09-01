@@ -47,28 +47,38 @@ body {
 }
 .label {
   margin-top: 1em;
-  display:inline-block;
-  clear:both;
+  display: inline-block;
+  clear: both;
 }
 .zones {
-  display:flex;
+  display: flex;
   align-items: center;
-
 }
 .circle {
-  padding:0.5em;
-  border:1px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.2);
+  padding: 0.5em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.2);
   border-radius: 300em;
-  width:1em;
-  height:1em;
-margin: 0.3em 0.15em;
-  display:flex;
+  width: 1em;
+  height: 1em;
+  margin: 0.3em 0.15em;
+  display: flex;
   align-items: center;
   justify-content: center;
-
 }
 .circle.current {
-  border:1px solid #F36322;
+  border: 1px solid #F36322;
   color: #F36322;
+}
+.recipeImg {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 300px;
+  overflow: hidden;
+  width: 120px;
+  height: 120px;
+  margin: 1em 0;
+}
+.recipeImg img {
+  width: 120px;
+  height: 120px;
 }

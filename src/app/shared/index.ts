@@ -5,3 +5,5 @@ export * from './brewer-status';
 export * from './brew.service';
 export * from './brew';
 export * from './endpointUrl';
+export * from './recipe.service';
+export * from './recipe';

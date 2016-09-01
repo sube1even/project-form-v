@@ -1,10 +1,17 @@
 <div *ngIf="brewerStatus">
   <span class="semibold lightgrey label">Now Brewing</span>
 
+  <div class="recipeImg">
+    <div *ngIf="recipe">
+      <img src="{{recipe.imageURL}}"/>
+
+    </div>
+  </div>
+
   <div class="fontlg">
     {{brewerStatus.customName}}
   </div>
-  <div class="fontsm">{{brewerStatus.id}}</div>
+  <div class="fontsm">{{brewerStatus.recipeId}}</div>
   <div>
     <span class="semibold lightgrey label">Brew started</span>
   </div>
@@ -31,25 +38,22 @@
 
     <!-- <span class="lightgrey">(COOLING | INLIMITS | HEATING)</span> -->
 
+    <div>
+      <span class="semibold lightgrey label">Current Zone</span>
+    </div>
+    <div class="zones">
 
-
-  <div>
-    <span class="semibold lightgrey label">Current Zone</span>
+      <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 1}">
+        1
+      </div>
+      <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 2}">
+        2
+      </div>
+      <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 3}">
+        3
+      </div>
+      <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 4}">
+        4
+      </div>
+    </div>
   </div>
-  <div class="zones">
-
-
-  <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 1}">
-    1
-  </div>
-  <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 2}">
-    2
-  </div>
-  <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 3}">
-    3
-  </div>
-  <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 4}">
-    4
-  </div>
-  </div>
-</div>
