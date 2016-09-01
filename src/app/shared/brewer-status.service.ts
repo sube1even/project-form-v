@@ -10,10 +10,10 @@ export class BrewerStatusService {
 
   constructor(private http: Http) {}
 
-  getBrewerStatus(id:number): Observable<BrewerStatus[]> {
+  getBrewerStatus(id: number): Observable<BrewerStatus> {
     return this.http
-               .get(endpointUrl.reverseProxy + endpointUrl.apiUrl + 'brewer/'+ id +'/brew' + '?access_token=' + endpointUrl.token)
-               .map((r: Response) => r.json().response as BrewerStatus[])
+               .get(endpointUrl.reverseProxy + endpointUrl.apiUrl + 'brewer/' + id + '/brew' + '?access_token=' + endpointUrl.token)
+               .map((r: Response) => r.json().response as BrewerStatus)
                .catch(this.handleError);
   }
 

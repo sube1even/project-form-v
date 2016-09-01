@@ -19,10 +19,11 @@ export class BrewTimeseriesComponent implements OnInit {
   @Input() currentBrewId: number;
   errorMessage: string;
   public lineChartData: Array<any>;
-  public lineChartLabels: Array<any>
+  public lineChartLabels: Array<any>;
   public lineChartOptions: any = {
     animation: {
-      animateScale: true
+      animateScale: true,
+      animationEasing: 'easeInOutQuad'
     },
     responsive: true,
     legend: {
@@ -30,18 +31,25 @@ export class BrewTimeseriesComponent implements OnInit {
     },
     scales: {
       xAxes: [{
-        display: false
-        //,type: 'time',
+        display: true,
+        // ,type: 'time',
         //         time: {
         //             displayFormats: {
         //                 quarter: 'h:mm:ss a'
         //             }
         //         }
+
+      }],
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
       }]
     }
   };
   public lineChartColours: Array<any> = [
     {
+      // backgroundColor: 'rgba(0,0,0,0.05)',
       backgroundColor: 'rgba(0,0,0,0.05)',
       borderColor: 'rgb(243, 99, 34)',
       borderWidth: 2,
@@ -84,7 +92,7 @@ export class BrewTimeseriesComponent implements OnInit {
         }
       },
       error => {
-        this.errorMessage = <any>error
+        this.errorMessage = <any>error;
       });
   }
 

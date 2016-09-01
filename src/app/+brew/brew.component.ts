@@ -10,18 +10,22 @@ import { BrewerStatus, BrewerStatusService } from '../shared';
   providers: [BrewerStatusService]
 })
 export class BrewComponent implements OnInit {
-  brewerStatus: BrewerStatus[];
+  brewerStatus: BrewerStatus;
   @Input() id: number;
   errorMessage: string;
 
-    constructor(private brewerStatusService: BrewerStatusService) { }
+    constructor(private brewerStatusService: BrewerStatusService) {
+  
+    }
 
     ngOnInit() {
       this.getBrewerStatus(this.id);
+      console.log(this.brewerStatus);
+
     }
 
     private getBrewerStatus(id:number) {
-          this.brewerStatus = null;
+          //this.brewerStatus = null;
           this.brewerStatusService.getBrewerStatus(this.id)
               .subscribe((brewerStatus) => {
                   if (brewerStatus) {

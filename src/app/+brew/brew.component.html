@@ -1,30 +1,30 @@
-<div *ngFor="let brew of brewerStatus">
+<div *ngIf="brewerStatus">
   <span class="semibold lightgrey label">Now Brewing</span>
 
   <div class="fontlg">
-    {{brew.customName}}
+    {{brewerStatus.customName}}
   </div>
-  <div class="fontsm">{{brew.id}}</div>
+  <div class="fontsm">{{brewerStatus.id}}</div>
   <div>
     <span class="semibold lightgrey label">Brew started</span>
   </div>
   <div class="fontmd">
-    {{brew.dateCreated | date:'medium'}}
+    {{brewerStatus.dateCreated | date:'medium'}}
   </div>
   <div>
     <span class="semibold lightgrey label">Ambient</span>
   </div>
   <div class="fontlg">
-    {{(brew.status.tempAmbient)/10}}&deg;C
+    {{(brewerStatus.status.tempAmbient)/10}}&deg;C
   </div>
   <div>
     <span class="semibold lightgrey label">Brew Temp</span>
   </div>
   <div class="fontlg">
-    {{(brew.status.tempBrew2L+brew.status.tempBrew8L)/2/10}}&deg;C
+    {{(brewerStatus.status.tempBrew2L+brewerStatus.status.tempBrew8L)/2/10}}&deg;C
   </div>
   <div class="fontsm">
-    {{brew.status.flag | uppercase}}
+    {{brewerStatus.status.flag | uppercase}}
   </div>
 
   <div>
@@ -39,16 +39,16 @@
   <div class="zones">
 
 
-  <div class="fontmd circle" [ngClass]="{current: brew.currentZone === 1}">
+  <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 1}">
     1
   </div>
-  <div class="fontmd circle" [ngClass]="{current: brew.currentZone === 2}">
+  <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 2}">
     2
   </div>
-  <div class="fontmd circle" [ngClass]="{current: brew.currentZone === 3}">
+  <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 3}">
     3
   </div>
-  <div class="fontmd circle" [ngClass]="{current: brew.currentZone === 4}">
+  <div class="fontmd circle" [ngClass]="{current: brewerStatus.currentZone === 4}">
     4
   </div>
   </div>
