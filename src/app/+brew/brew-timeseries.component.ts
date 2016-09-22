@@ -18,6 +18,10 @@ export class BrewTimeseriesComponent implements OnInit {
   brewTimeseries: Brew[];
   @Input() currentBrewId: number;
   errorMessage: string;
+
+
+
+
   public lineChartData: Array<any>;
   public lineChartLabels: Array<any>;
   public lineChartOptions: any = {
@@ -47,10 +51,12 @@ export class BrewTimeseriesComponent implements OnInit {
       }]
     }
   };
+
   public lineChartColours: Array<any> = [
     {
       // backgroundColor: 'rgba(0,0,0,0.05)',
-      backgroundColor: 'rgba(0,0,0,0.05)',
+      //backgroundColor: 'rgba(0,0,0,1)',
+      backgroundColor : 'rgba(98, 39, 8, 0.25)',
       borderColor: 'rgb(243, 99, 34)',
       borderWidth: 2,
       pointBackgroundColor: 'rgba(77,83,96,1)',
@@ -67,6 +73,15 @@ export class BrewTimeseriesComponent implements OnInit {
 
   ngOnInit() {
     this.getBrewTimeseries(this.currentBrewId);
+
+    // let c = document.getElementById("myCanvas");
+    // let ctx = c.getContext("2d");
+    // let grd = ctx.createLinearGradient(0, 0, 170, 0);
+    // grd.addColorStop(0, "black");
+    // grd.addColorStop(1, "white");
+    // ctx.fillStyle = grd;
+    // ctx.fillRect(20, 20, 150, 100);
+
   }
 
   private getBrewTimeseries(currentBrewId: number) {
@@ -84,8 +99,8 @@ export class BrewTimeseriesComponent implements OnInit {
             times.push(temp.timestamp);
           });
 
-          console.log(brewTimeseries);
-          tempdata.push({ data: temps, label: 'Temp' });
+          //console.log(brewTimeseries);
+          tempdata.push({ data: temps.reverse(), label: 'Temp' });
           console.log(tempdata);
           this.lineChartData = tempdata;
           this.lineChartLabels = times;

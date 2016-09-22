@@ -10,10 +10,10 @@ import { BrewTimeseriesComponent } from '../+brew/brew-timeseries.component';
   templateUrl: 'brewer.component.html',
   styleUrls: ['brewer.component.css'],
   providers: [BrewerService],
-  directives: [BrewComponent,BrewTimeseriesComponent]
+  directives: [BrewComponent, BrewTimeseriesComponent]
 })
 export class BrewerComponent implements OnInit {
-  brewer: Brewer[];
+  brewer: Brewer;
   brewerName: string;
   id: number;
   currentBrewId: number;
@@ -33,7 +33,6 @@ export class BrewerComponent implements OnInit {
         if (brewer) {
           console.log(brewer);
           this.brewer = brewer;
-          // this.id = this.brewer[0].id;
           this.id = this.brewer['id'];
           this.currentBrewId = this.brewer['currentBrewId'];
         }

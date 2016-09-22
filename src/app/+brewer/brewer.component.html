@@ -1,9 +1,23 @@
 <div *ngFor="let beerdroid of brewer">
+  <div class="row">
+
+<div class="col-md-6">
+<div class="col-md-6">
+  <div class="beerdroid">
+    <img src="./assets/beerdroid2.png" />
+  </div></div>
+  <div class="col-md-6">
   <span class="semibold lightgrey label">Name</span>
   <div class="fontlg">
     {{beerdroid.name}}
   </div>
   <div class="fontsm">{{beerdroid.status  | uppercase}}</div>
+
+  </div>
+  </div>
+  </div>
+  <div class="col-md-6">
   <app-brew [id]="beerdroid.id"></app-brew>
+  </div>
   <app-brew-timeseries [currentBrewId]="beerdroid.currentBrewId"></app-brew-timeseries>
 </div>

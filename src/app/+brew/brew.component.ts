@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { BrewerStatus, BrewerStatusService, RecipeService, Recipe } from '../shared';
+import { BrewTimeseriesComponent } from '../+brew/brew-timeseries.component';
 
 @Component({
   moduleId: module.id,
@@ -15,12 +16,16 @@ export class BrewComponent implements OnInit {
   @Input() id: number;
   recipeId: number;
   errorMessage: string;
+  brewstart: any;
+  brewstartDaysago:number;
+  brewstartHoursago:number;
 
     constructor(private brewerStatusService: BrewerStatusService, private recipeService: RecipeService) {
 
     }
 
     ngOnInit() {
+
       this.getBrewerStatus(this.id);
       console.log(this.brewerStatus);
 
@@ -33,7 +38,9 @@ export class BrewComponent implements OnInit {
                   if (brewerStatus) {
                       this.brewerStatus = brewerStatus;
                       this.getCurrentRecipe(brewerStatus.recipeId);
-                      console.log(this.brewerStatus);
+                      // console.log(this.brewerStatus);
+                      this.brewstart = this.brewerStatus.dateCreated;
+                      this.calcDaysHours(new Date(this.brewstart));
                   }
               },
               error => {
@@ -54,6 +61,13 @@ export class BrewComponent implements OnInit {
                 error => {
                    this.errorMessage = <any>error
                 });
+        }
+
+        private calcDaysHours(created: Date) {
+          let msSinceCreated = new Date().getTime() - created.getTime();
+          let hrsSinceCreated = msSinceCreated/1000/60/60;
+          this.brewstartDaysago = hrsSinceCreated/24;
+          this.brewstartHoursago = hrsSinceCreated%24;
         }
 
 }

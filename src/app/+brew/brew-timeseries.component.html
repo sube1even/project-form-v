@@ -1,7 +1,9 @@
-<span class="semibold lightgrey graph-title">Brew Temperature</span> 
-<base-chart class="chart"
-                [datasets]="lineChartData"
-                [labels]="lineChartLabels"
-                [options]="lineChartOptions"
-                [colors]="lineChartColours"
-                [chartType]="lineChartType"></base-chart>
+<div class="row">
+
+  <div class="col-md-6">
+    <div class="panel">
+      <span class="semibold lightgrey graph-title">Brew Temperature</span>
+      <base-chart class="chart" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColours" [chartType]="lineChartType"></base-chart>
+    </div>
+  </div>
+</div>

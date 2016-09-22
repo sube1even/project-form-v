@@ -16,12 +16,14 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="./assets/bootstrap.min.css"></link>
   <link rel="stylesheet" href="./app/app.component.css"></link>
+
 </head>
 <body>
   <div class="header"><img src="./assets/logo.svg"></div>
   <app-root><span class="semibold lightgrey">Loading...</span></app-root>
-  
+
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>
     {{/each}}
@@ -30,6 +32,6 @@
         System.import('main');
       }).catch(console.error.bind(console));
     </script>
-  
+
 </body>
 </html>
